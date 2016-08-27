@@ -1,0 +1,45 @@
+<style>
+.container hr {
+	margin: 0 0 10px 0;
+	background-color:black;
+	height:1px;
+}
+ 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;    
+    border-color: silver;
+    
+}
+
+table {
+    margin-top: 20px;
+	margin-bottom: 10px;
+    
+}
+
+header {
+  margin-top: 10px;
+}
+
+article {
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+
+footer {
+  margin-top: 20px;
+}
+
+.botaoAdd{
+	vertical-align: top;
+    margin-left: 10px;
+}
+
+.inputtext{     
+    width:90px;
+    align-content: space-around;  
+    box-shadow: none;    
+}
+
+</style>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="pt-br">
+    <head>
+        <title>S2</title>
+        <meta charset="utf-8">
+        <script src="assets/js/angular/angular.min.js"></script>
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="assets/css/css.css" rel="stylesheet" >          
+    </head>
+    <body ng-controller="controller">       
+        <form name="frm" novalidate ng-submit="saveObj(obj)">          
+            
+             <article>
+                 <header>                    
+                    <input type="radio" class="radio" value="Saque" ng-model="obj.tipo" required> Saque
+                    <input type="radio" class="radio" value="Depósito" ng-model="obj.tipo" required> Depósito                                
+                                                            
+                    <input autofocus="true" class="inputtext" type="number" autocomplete="off" min="1" maxlength="8" pattern="^\d*(\.\d{2}$)?" ng-model="obj.valor" name="txtValor" placeholder="Valor" required>                         
+                     
+                    <input type="submit" class="btn btn-primary botaoAdd" value="Adicionar" ng-disabled="frm.$invalid">                
+                 </header>
+                
+                 <table id="tab" ng-show="lista.length" class="table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="lista in lista">
+                        <td>{{ lista.tipo }}</td>
+                        <td type="number" min="1" maxlength="8" pattern="^\d*(\.\d{2}$)?" ng-model="money">{{ lista.valor | currency : "R$" }}</td>
+                        <td><img src="assets/img/delete.png" ng-click="removeItem($index)"/></td>
+                      </tr>
+                    </tbody>
+                </table>
+            
+                <footer>
+                    <label type="text" maxlength="8">
+                        Total em conta: {{saldo | currency : "R$"}}                                                   
+                    </label>
+                </footer>
+            
+            </article>
+        
+        <br> 
+        
+        </form>        
+                      
+        <!-- controllers -->
+        <script src="assets/js/controller.js"></script>
+        
+        
+    </body>
+           
+</html>
+    
